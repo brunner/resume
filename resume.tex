@@ -1,17 +1,24 @@
 \documentclass{article}
+
+\usepackage{contour}
 \usepackage[margin=.7in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{ulem}
+\usepackage{xcolor}
+
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
 
 % -------------------- Commands --------------------
 
 % Produces the header for the resume.
-% @param 1: header line 1
-% @param 2: subheader line 1
-% @param 3: subheader line 2
-\newcommand{\header}[3]{
+% @param 1: header line
+% @param 2: subheader line
+\newcommand{\header}[2]{
   \begin{center}
     {\LARGE \textbf{#1}} \\
+    \vspace*{5px}
     {#2} \\
-    {#3}
   \end{center}
 }
 
@@ -22,12 +29,20 @@
   } 
 }
 
+% Produces underlined text.
+% h/t https://alexwlchan.net/2017/10/latex-underlines/
+% @param 1: text
+\newcommand{\myuline}[1]{%
+  \color{black!80}{\uline{\phantom{#1}}}%
+  \llap{\contour{white}{#1}}%
+}
+
 % Produces a section header.
 % @param 1: section header text
 \renewcommand{\section}[1]{
   \vspace*{5px}
   \noindent {\Large \textbf{#1}} \\
-  \vspace*{-20px} \\
+  \vspace*{-24px} \\
   \hr
   \vspace*{-10px}
 }
@@ -68,7 +83,7 @@
 % --------------------- Header ---------------------
 \header
     {Joe Brunner}
-    {https://linkedin.com/in/brunnerj $\cdot$ brunnerj16@gmail.com $\cdot$ https://github.com/brunner}
+    {https://github.com/brunner $\cdot$ https://linkedin.com/in/brunnerj}
 
 % ------------------- Employment -------------------
 \section
@@ -78,52 +93,46 @@
     {Square}
 \subsectiondetail
     {Senior Software Engineer, Prices}
-    {03/2019 - present}
+    {03/2019 – present}
+\listitem
+    {Built and released public Square Developer APIs enabling businesses to sell
+        product subscriptions to customers.}
+\listitem
+    {Steered efforts to promote API-first integrations, rewriting public SDKs to
+        be compatible with internal services.}
 
 \subsection
-    {Google, Inc.}
+    {Google}
 \subsectiondetail
-    {Software Engineer, Core Search Features / Search Platforms}
-    {06/2014 - 03/2019}
+    {Software Engineer, Core Search Features and Search Platforms}
+    {06/2014 – 03/2019}
 \listitem
-    {Implement changes to Search's frontend server (mostly Java, Python, HTML),
-        serving billions of users worldwide.}
+    {Maintained the Search front-end server (Java, Python, HTML), delivering
+        results to billions of users worldwide.}
 \listitem
-    {Own the content and presentation of core features such as standard web
-        results and real-time (i.e. Twitter) results.}
+    {Owned the presentation of core features such as organic Search results and
+        real-time (e.g. Twitter) results.}
 \listitem
-    {Develop a library of reusable, cross-platform, common UI elements such as
+    {Developed a library of reusable, cross-platform UI elements such as
         carousels, buttons, and image layouts.}
 \listitem
-    {Pioneer infrastructure enabling rapid feature development and growth
-        opportunities for emerging platforms.}
+    {Pioneered infrastructure to drive rapid adoption of long-tail features by
+        emerging Search platforms.}
 \listitem
-    {Maintain and improve internal web templating language, supporting hundreds
-        of features and their use-cases.}
+    {Made improvements to the custom web templating language used within Search,
+        supporting hundreds of features.}
 \listitem
-    {Marshal the Search frontend server release, overseeing canary and
-        production rollouts and handling escalations.}
-
-\subsection
-    {University of Rochester}
-\subsectiondetail
-    {IT Consultant / Senior Student Lead, Information Technology Services}
-    {09/2010 - 05/2014}
-\listitem
-    {Troubleshooted student and faculty issues such as account access, network
-        connectivity, and malware infections.}
-\listitem
-    {Managed staff hiring, scheduling, and training processes as promoted Senior
-        Student Lead from 2012 - 2014.}
+    {Marshaled the front-end server deploy, overseeing canary and production
+        rollouts and handling escalations.}
 
 \subsection
     {FactSet Research Systems}
 \subsectiondetail
     {Software Engineer Intern, Idea Screening}
-    {05/2013 - 08/2013}
+    {05/2013 – 08/2013}
 \listitem
-    {Created a debugging tool to help FactSet's full-time engineers profile the
-        Idea Screening web application.}
+    {Created a web application profiling tool to identify performance
+        bottlenecks and facilitate easier debugging.}
 
 % ------------------- Education --------------------
 \section
@@ -132,39 +141,48 @@
 \subsection
     {University of Rochester}
 \subsectiondetail
-    {Bachelor of Science in Computer Science / Bachelor of Arts in Mathematics}
-    {09/2010 - 05/2014}
+    {Bachelor of Science, Computer Science; Bachelor of Arts, Mathematics}
+    {09/2010 – 05/2014}
 \listitem
-    {Earned cumulative GPA of 3.61 (from 4.0), with core Computer Science of
-        3.68 and core Mathematics of 3.53.}
+    {Earned cumulative GPA of 3.61/4.0, with core GPAs of 3.68 in Computer
+        Science and 3.53 in Mathematics.}
 \listitem
-    {Twice participated in scholastic extracurriculars such as the CS Games 
-        annual inter-collegiate competition.}
+    {Worked on IT Center student staff for four years, troubleshooting account
+        and network-related issues.}
 \listitem
-    {Played four years of soccer at the club level and held an elected
-        leadership role on the team from 2012 - 2014.}
+    {Managed staff hiring, scheduling, and training processes for two years as
+        senior IT Center student lead.}
 
 % ------------------- Projects --------------------
 \section
     {Projects}
 
 \subsection
-    {Orange and Blue League}
+    {Filefairy}
 \subsectiondetail
-    {Creator, Fairylab (https://brunnerj.com/fairylab)}
-    {10/2016 - present}
+    {Creator, \myuline{https://github.com/brunner/filefairy}}
+    {10/2016 – 05/2019}
 \listitem
-    {Automate a series of repetitive tasks relating to a friendly online
-        competition simulating a baseball league.}
+    {Sidekick to StatsPlus, complete with Slack integration, that improved the
+        accessibility of an OOTP baseball league.}
 \listitem
-    {Ensure resiliency to unexpected or missing inputs through task isolation,
-        logging, and dynamic app reloading.}
+    {Ensured resiliency to unexpected or missing inputs through module
+        isolation and dynamic app reloading.}
 \listitem
-    {Leverage common, well-tested infrastructure between tasks, resulting in
-        consistent and predictable behavior.}
+    {Leveraged shared infrastructure between modules to achieve consistent and
+        predictable behavior.}
+
+\subsection
+    {Fairylab}
+\subsectiondetail
+    {Creator, \myuline{https://brunnerj.com/fairylab}}
+    {09/2018 – 05/2019}
+\listitem
+    {Front-end generated by Filefairy, emulating the StatsLab interface and
+        introducing the ability to rewatch games.}
 
 % --------------------- Footer ---------------------
 \footer
-    {Last updated July 2019}
+    {Last updated May 2020}
 
 \end{document}
