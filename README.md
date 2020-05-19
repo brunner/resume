@@ -1,1 +1,3 @@
-# reresume
+# Resume
+
+LaTeX professional resume template.

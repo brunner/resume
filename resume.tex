@@ -1,0 +1,171 @@
+\documentclass{article}
+\usepackage[margin=.7in]{geometry}
+
+% -------------------- Commands --------------------
+
+% Produces the header for the resume.
+% @param 1: header line 1
+% @param 2: subheader line 1
+% @param 3: subheader line 2
+\newcommand{\header}[3]{
+  \begin{center}
+    {\LARGE \textbf{#1}} \\
+    {#2} \\
+    {#3}
+  \end{center}
+}
+
+% Produces a horizontal rule.
+\newcommand{\hr}{
+  \noindent \makebox[\linewidth]{
+    \rule{\textwidth}{1pt}
+  } 
+}
+
+% Produces a section header.
+% @param 1: section header text
+\renewcommand{\section}[1]{
+  \vspace*{5px}
+  \noindent {\Large \textbf{#1}} \\
+  \vspace*{-20px} \\
+  \hr
+  \vspace*{-10px}
+}
+
+% Produces a section subheader.
+% @param 1: section subheader text
+\renewcommand{\subsection}[1]{
+  \noindent {\large \textbf{#1}} \\
+}
+
+% Produces a section subheader detail.
+% @param 1: section subheader detail text
+\newcommand{\subsectiondetail}[2]{
+  \noindent {\textit{#1} \hfill {#2}} \\
+}
+
+% Produces indented text.
+% @param 1: text
+\newcommand{\listitem}[1]{
+  $\bullet$ {#1} \\
+}
+
+% Produces the footer for the resume.
+% @param 1: footer line 1
+\newcommand{\footer}[1]{
+  \begin{center}
+    {#1}
+  \end{center}
+}
+
+% -------------------- Document --------------------
+
+\setlength{\parindent}{13pt}
+\linespread{1.3}
+\pagestyle{empty}
+\begin{document}
+
+% --------------------- Header ---------------------
+\header
+    {Joe Brunner}
+    {Software Engineer $\cdot$ brunnerj16@gmail.com}
+    {https://linkedin.com/in/brunnerj $\cdot$ https://github.com/brunner}
+
+% ------------------- Employment -------------------
+\section
+    {Employment}
+
+\subsection
+    {Google, Inc.}
+\subsectiondetail
+    {Software Engineer, Core Search Features / Search Platforms}
+    {06/2014 - present}
+\listitem
+    {Implement changes to Search's frontend server (mostly Java, Python, HTML),
+        serving billions of users worldwide.}
+\listitem
+    {Own the content and presentation of core features such as standard web
+        results and real-time (Twitter) results.}
+\listitem
+    {Develop a library of reusable, cross-platform, common UI elements like
+        carousels, buttons, and image layouts.}
+\listitem
+    {Pioneer infrastructure enabling rapid feature development and growth
+        opportunities for emerging platforms.}
+\listitem
+    {Maintain and improve internal web templating language, supporting hundreds
+        of features and their use-cases.}
+\listitem
+    {Marshal the Search frontend server release, overseeing canary and
+        production rollouts and handling escalations.}
+\listitem
+    {Accumulate expertise in other areas including accessibility,
+        experimentation, internationalization, and logging.}
+
+\subsection
+    {University of Rochester}
+\subsectiondetail
+    {IT Consultant / Senior Student Lead, Information Technology Services}
+    {09/2010 - 05/2014}
+\listitem
+    {Troubleshooted student and faculty issues such as account access, network
+        connectivity, and malware infections.}
+\listitem
+    {Managed staff hiring, scheduling, and training processes as promoted Senior
+        Student Lead from 2012 - 2014.}
+
+\subsection
+    {FactSet Research Systems}
+\subsectiondetail
+    {Software Engineer Intern, Idea Screening}
+    {05/2013 - 08/2013}
+\listitem
+    {Created a debugging tool to help FactSet's full-time engineers profile the
+        Idea Screening web application.}
+
+% ------------------- Education --------------------
+\section
+    {Education}
+
+\subsection
+    {University of Rochester}
+\subsectiondetail
+    {Bachelor of Science in Computer Science / Bachelor of Arts in Mathematics}
+    {09/2010 - 05/2014}
+\listitem
+    {Earned cumulative GPA of 3.61 (from 4.0), with core Computer Science of
+        3.68 and core Mathematics of 3.53.}
+\listitem
+    {Participated in scholastic extracurriculars such as the CS Games annual 
+        inter-collegiate competition (twice).}
+\listitem
+    {Played four years of soccer at the club level and held an elected
+        leadership role on the team from 2012 - 2014.}
+
+% ------------------- Projects --------------------
+\section
+    {Projects}
+
+\subsection
+    {Orange and Blue League}
+\subsectiondetail
+    {Creator, Fairylab (https://fairylab.surge.sh)}
+    {10/2016 - present}
+\listitem
+    {Automate a series of repetitive tasks relating to a friendly online
+        competition simulating a baseball league.}
+\listitem
+    {Ensure resiliency to unexpected or missing inputs through task isolation,
+        logging, and dynamic app reloading.}
+\listitem
+    {Leverage common, well-tested infrastructure between tasks, resulting in
+        consistent and predictable behavior.}
+\listitem
+    {Deploy carefully presented, curated information to the static Fairylab
+        website following the completion of each task.}
+
+% --------------------- Footer ---------------------
+\footer
+    {Last updated November 2018}
+
+\end{document}
