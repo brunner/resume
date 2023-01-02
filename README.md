@@ -2,4 +2,4 @@
 
 LaTeX professional resume template.
 
-Last updated May 2020.
+Last updated January 2023.
