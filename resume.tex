@@ -5,6 +5,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{ulem}
 \usepackage{xcolor}
+\usepackage{fontawesome}
 
 \renewcommand{\ULdepth}{1.8pt}
 \contourlength{0.8pt}
@@ -17,7 +18,7 @@
 \newcommand{\header}[2]{
   \begin{center}
     {\LARGE \textbf{#1}} \\
-    \vspace*{5px}
+    \vspace*{4px}
     {#2} \\
   \end{center}
 }
@@ -56,7 +57,8 @@
 % Produces a section subheader detail.
 % @param 1: section subheader detail text
 \newcommand{\subsectiondetail}[2]{
-  \noindent {\textit{#1} \hfill {#2}} \\
+  \vspace*{-12px} \\
+  \noindent {\myuline{#1} \hfill {#2}} \\
 }
 
 % Produces indented text.
@@ -76,6 +78,15 @@
 % Produces a twiddle character.
 \newcommand{\twiddle}{\raise.2ex\hbox{$\scriptstyle\sim$}}
 
+% Produces a GitHub icon.
+\newcommand{\github}{\faGithubAlt \space}
+
+% Produces a LinkedIn icon.
+\newcommand{\linkedin}{\faLinkedinSquare \space}
+
+% Produces a Globe icon.
+\newcommand{\globe}{\faGlobe \space}
+
 % -------------------- Document --------------------
 
 \setlength{\parindent}{13pt}
@@ -86,35 +97,42 @@
 % --------------------- Header ---------------------
 \header
     {Joe Brunner}
-    {https://github.com/brunner $\cdot$ https://linkedin.com/in/brunnerj}
+    {\href{https://github.com/brunner}{\github github.com/brunner} $\cdot$
+    \href{https://linkedin.com/in/brunnerj}{\linkedin linkedin.com/in/brunnerj}}
 
 % ------------------- Employment -------------------
 \section
     {Employment}
 
 \subsection
-    {Square}
+    {Block}
 \subsectiondetail
-    {Senior Software Engineer, Orders Platform and API}
-    {03/2019 – present}
+    {Staff Software Engineer, Orders Platform and Customer Operations}
+    {07/2021 – present}
 \listitem
-    {Owned Orders crossplatform (iOS, Android, server) and backend (Java,
-        Kotlin, Go) infrastructure components.}
+    {Owned critical Orders APIs (Kotlin, Go) and Pricing crossplatform (Swift,
+        Kotlin Multiplatform) infrastructure.}
 \listitem
-    {Coordinated end-to-end launches of core features such as customer group
+    {Steered modernization of Customer Ops components (Ruby, React, GraphQL)
+        and data analysis (Snowflake, Looker).}
+\listitem
+    {Led improvements to operational processes and system health monitoring to
+        ensure high availability and performance.}
+\listitem
+    {Fostered engaging and collaborative team environments where other
+        engineers successfully grow their careers.}
+\subsectiondetail
+    {Senior Software Engineer, Subscriptions APIs and Orders Platform}
+    {03/2019 – 07/2021}
+\listitem
+    {Coordinated end-to-end launches of core Orders features such as customer
         discounts and itemized service charges.}
 \listitem
-    {Scaled new discounting and calculating backends from inception to
-        supporting millions of daily API requests.}
+    {Scaled Orders discounting and calculating APIs from their inception to
+        supporting millions of daily requests.}
 \listitem
     {Built and released public Square Developer APIs enabling businesses to
         sell product subscriptions to customers.}
-\listitem
-    {Shaped operational processes and system health monitoring to ensure top
-        service availability and performance.}
-\listitem
-    {Fostered highly engaging and collaborative team environments where other
-        engineers successfully grow their careers.}
 
 \subsection
     {Google}
@@ -122,17 +140,14 @@
     {Software Engineer, Core Search Features and Search Platforms}
     {06/2014 – 03/2019}
 \listitem
-    {Maintained the Search frontend server (Java, Python, HTML), delivering
+    {Maintained the Search frontend web server (Java, Python, XML) delivering
         results to billions of users worldwide.}
 \listitem
-    {Developed the presentation of core features such as organic Search results
-        and real-time (e.g. Twitter) results.}
+    {Implemented the UI layer of many core features such as organic Search
+        results and real-time (e.g. Twitter) results.}
 \listitem
-    {Pioneered architecture to drive the rapid adoption of long-tail Search
-        features on emerging clients and networks.}
-\listitem
-    {Effected iterative improvements to a custom web templating language
-        utilized by hundreds of Search teams.}
+    {Pioneered architecture to drive rapid adoption of long-tail Search
+        features on emerging clients and low-end networks.}
 
 \subsection
     {FactSet Research Systems}
@@ -140,8 +155,8 @@
     {Software Engineer Intern, Idea Screening}
     {05/2013 – 08/2013}
 \listitem
-    {Designed a profiling tool to identify performance bottlenecks and
-        facilitate easier debugging across several services.}
+    {Created a profiling tool to trace calls and identify bottlenecks across
+        financial reporting APIs and frontends.}
 
 % ------------------- Education --------------------
 \section
@@ -153,14 +168,14 @@
     {Bachelor of Science, Computer Science; Bachelor of Arts, Mathematics}
     {09/2010 – 05/2014}
 \listitem
-    {Earned cumulative GPA of 3.61/4.0, with core GPAs of 3.68 in Computer
-        Science and 3.53 in Mathematics.}
+    {Cumulative GPA of 3.61/4.0, earning degrees in Computer Science (core GPA
+        of 3.68) and Mathematics (3.53).}
 \listitem
-    {Worked on IT Center student staff for four years, troubleshooting a
-        variety of account and network-related issues.}
+    {Worked on IT student staff for four years, resolving account and
+        network issues for university faculty and students.}
 \listitem
-    {Managed hiring, scheduling, and training for two years as IT Center
-        student lead to \twiddle20 other student employees.}
+    {Managed hiring, scheduling, and training for over two years as IT student
+        lead to \twiddle20 other student employees.}
 
 % ------------------- Projects --------------------
 \section
@@ -169,20 +184,20 @@
 \subsection
     {Filefairy}
 \subsectiondetail
-    {Creator, \myuline{https://github.com/brunner/filefairy}}
+    {Creator, \href{https://github.com/brunner/filefairy}{\github github.com/brunner/filefairy} and \href{https://brunnerj.com/fairylab}{\globe brunnerj.com/fairylab}}
     {10/2016 – 05/2019}
 \listitem
-    {Created an extensible application to enhance game data generated from an
+    {Developed an extensible application to enhance game data generated from an
         online Out of the Park Baseball league.}
 \listitem
-    {Surfaced dynamically generated webpages illustrating the current state of
-        gameplay for increased accessibility.}
+    {Surfaced a dynamically generated web UI illustrating the current game
+        state for increased stakeholder accessibility.}
 \listitem
-    {Prioritized resiliency to unexpected data changes through careful module
-        isolation and dynamic app reloading.}
+    {Prioritized resiliency to data provider changes through careful module
+        isolation and on-demand app reloading.}
 
 % --------------------- Footer ---------------------
 \footer
-    {Last updated June 2024}
+    {Last updated April 2025}
 
 \end{document}
